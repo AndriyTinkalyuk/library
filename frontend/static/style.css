@@ -236,3 +236,408 @@ main {
     }
 }
 
+
+
+/* Main container */
+.main {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* Section titles */
+.main__title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Form elements */
+.main__form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.main__label {
+    font-size: 1em;
+    color: #555;
+}
+
+.main__input,
+.main__textarea {
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.main__button {
+    padding: 10px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.main__button:hover {
+    background-color: #0056b3;
+}
+
+/* Divider */
+.main__divider {
+    margin: 20px 0;
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+}
+
+/* Relic list */
+.main__list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.main__list-item {
+    font-size: 1em;
+    color: #333;
+    margin: 5px 0;
+}
+
+.main__relic-name {
+    font-weight: bold;
+}
+
+.main__link {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.main__link:hover {
+    text-decoration: underline;
+}
+
+
+/* Catalog Main Section */
+.catalog-main {
+    padding: 2rem;
+}
+
+.catalog-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+/* Catalog List Styling */
+.catalog-list {
+    list-style: none;
+    padding: 0;
+}
+
+.catalog-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    background-color: #fafafa;
+}
+
+/* Catalog Item Title */
+.catalog-item-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+/* Catalog Item Text Content */
+.catalog-item-description,
+.catalog-item-availability,
+.catalog-item-owner {
+    font-size: 1rem;
+    margin: 0.3rem 0;
+    color: #555;
+}
+
+/* Button to Take Book */
+.catalog-item-form .catalog-item-button {
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.catalog-item-form .catalog-item-button:hover {
+    background-color: #45a049;
+}
+
+/* Login Prompt Link */
+.catalog-item-login-prompt a.catalog-item-login-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.catalog-item-login-prompt a.catalog-item-login-link:hover {
+    text-decoration: underline;
+}
+
+/* Message for Taken Book */
+.catalog-item-taken-message {
+    font-style: italic;
+    color: #888;
+}
+
+/* Main Section for Edit Form */
+.edit-main {
+    padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Styling Labels */
+.edit-label {
+    font-size: 1rem;
+    margin-top: 1rem;
+    color: #333;
+    display: block;
+}
+
+/* Input and Textarea Styling */
+.edit-input, .edit-textarea, .edit-checkbox {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.edit-textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Update Button */
+.edit-submit-button {
+    padding: 0.6rem 1rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-submit-button:hover {
+    background-color: #45a049;
+}
+
+/* Delete Button */
+.delete-button {
+    padding: 0.6rem 1rem;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.delete-button:hover {
+    background-color: #c9302c;
+}
+
+
+/* Main Section for Login Form */
+.login-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Login Form Styling */
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Input Styling */
+.login-input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Login Button Styling */
+.login-button {
+    width: 100%;
+    padding: 0.6rem;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #45a049;
+}
+
+/* Register Text and Link */
+.register-text {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.register-link {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Main Section for Register Form */
+.register-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* Register Form Styling */
+.register-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Input Styling */
+.register-input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Register Button Styling */
+.register-button {
+    width: 100%;
+    padding: 0.6rem;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.register-button:hover {
+    background-color: #0056b3;
+}
+
+
+.borrowed-main {
+    padding: 20px;
+    background-color: #f9f9f9; /* Легкий фон для основного контейнера */
+    border-radius: 8px; /* Закруглені кути */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Легке тінювання */
+    max-width: 800px; /* Максимальна ширина для адаптивності */
+    margin: 20px auto; /* Центрування контейнера */
+}
+
+.borrowed-description {
+    font-size: 18px; /* Збільшений розмір шрифту для опису */
+    margin-bottom: 15px; /* Відступ знизу */
+    color: #333; /* Темний колір тексту */
+}
+
+.borrowed-list {
+    list-style-type: none; /* Вимкнення маркерів списку */
+    padding: 0; /* Вимкнення відступу */
+}
+
+.borrowed-item {
+    display: flex; /* Використання флексбоксу для елементів списку */
+    justify-content: space-between; /* Простір між іменем книги та формою */
+    align-items: center; /* Центрування елементів по вертикалі */
+    background-color: #fff; /* Білий фон для кожного елемента */
+    padding: 15px; /* Внутрішній відступ */
+    margin-bottom: 10px; /* Відступ між елементами списку */
+    border-radius: 5px; /* Закруглені кути для елементів списку */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Легке тінювання для елементів списку */
+}
+
+.borrowed-item-name {
+    font-size: 16px; /* Розмір шрифту для назви книги */
+    font-weight: bold; /* Жирний текст */
+    color: #007BFF; /* Колір для назви книги */
+}
+
+.borrowed-item-description {
+    font-size: 14px; /* Розмір шрифту для опису */
+    color: #555; /* Сірий колір тексту для опису */
+}
+
+.return-form {
+    display: inline; /* Форму для повернення в рядку з текстом */
+}
+
+.return-button {
+    background-color: #dc3545; /* Червоний фон для кнопки повернення */
+    color: white; /* Білий текст */
+    border: none; /* Вимкнення обведення */
+    padding: 10px 15px; /* Внутрішні відступи кнопки */
+    border-radius: 5px; /* Закруглені кути для кнопки */
+    cursor: pointer; /* Показує, що кнопка клікабельна */
+    transition: background-color 0.3s; /* Плавний перехід фону */
+}
+
+.return-button:hover {
+    background-color: #c82333; /* Темніший червоний колір при наведенні */
+}
+
+.no-borrowed-items {
+    text-align: center; /* Центрування тексту для відсутності елементів */
+    font-size: 16px; /* Розмір шрифту */
+    color: #777; /* Сірий колір тексту */
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <nav class="header__nav">
+                <div class="burger-menu" id="burger-menu">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <ul class="header__nav-list" id="nav-links">
+                    <li class="header__nav-item"><a class="header__nav-link" href="{{ url_for('home') }}">Home</a></li>
+                    <li class="header__nav-item"><a class="header__nav-link" href="{{ url_for('homepages.catalog') }}">Catalog</a></li>
+                </ul>
+                <ul class="header__user-list">
+                    {% if 'user' in session %}
+                        {% if session['user']['role'] == 'admin' %}
+                            <li class="header__user-item"><a class="header__user-link" href="{{ url_for('homepages.admin_home') }}">{{ session['user']['username'] }}</a></li>
+                        {% else %}
+                            <li class="header__user-item"><a class="header__user-link" href="{{ url_for('homepages.user_home') }}">{{ session['user']['username'] }}</a></li>
+                        {% endif %}
+                        <li class="header__user-item"><a class="header__user-link" href="{{ url_for('auth.logout') }}">Logout</a></li>
+                    {% else %}
+                        <li class="header__user-item"><a class="header__user-link" href="{{ url_for('auth.login') }}">Login</a></li>
+                        <li class="header__user-item"><a class="header__user-link" href="{{ url_for('auth.register') }}">Sign Up</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+            <h1 class="header__title">Welcome to the Catalog of Library Management System</h1>
+        </div>
+    </header>
+
+    <main class="catalog-main">
+        <section class="catalog-section">
+            <h2 class="catalog-title">Catalog of Books</h2>
+            <ul class="catalog-list">
+                {% for relic in relics %}
+                    <li class="catalog-item">
+                        <h3 class="catalog-item-title">{{ relic['name'] }}</h3>
+                        <p class="catalog-item-description"><strong>Description:</strong> {{ relic['description'] }}</p>
+                        <p class="catalog-item-availability"><strong>Available:</strong> {{ 'Yes' if relic['available'] else 'No' }}</p>
+                        <p class="catalog-item-owner"><strong>Owner:</strong> {{ relic['owner'] if relic['owner'] else 'Archive' }}</p>
+    
+                        {% if relic['available'] %}
+                            {% if 'user' in session %}
+                                <!-- Кнопка взяти книгу, якщо користувач авторизований -->
+                                <form action="{{ url_for('relics.take_relic', relic_id=relic['_id']) }}" method="POST" class="catalog-item-form">
+                                    <button type="submit" class="catalog-item-button">Take Book</button>
+                                </form>
+                            {% else %}
+                                <!-- Якщо користувач не авторизований, запропонувати увійти -->
+                                <p class="catalog-item-login-prompt">Please <a href="{{ url_for('auth.login') }}" class="catalog-item-login-link">log in</a> to take this Book.</p>
+                            {% endif %}
+                        {% else %}
+                            <!-- Якщо книга зайнята -->
+                            <p class="catalog-item-taken-message">This book is already taken by {{ relic['owner'] }}.</p>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+    
+
+    <footer class="footer">
+        <p class="footer__contact">Contact us at: andrew.tinkaluk@chnu.edu.ua</p>
+        <p class="footer__contact">Phone: +38 097 801 887</p>
+    </footer>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const burgerMenu = document.getElementById("burger-menu");
+    const navLinks = document.getElementById("nav-links");
+
+    burgerMenu.addEventListener("click", function() {
+        navLinks.classList.toggle("active");
+    });
+});
+
+
+    </script>
+</body>
+</html>

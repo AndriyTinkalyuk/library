@@ -15,19 +15,26 @@
                     <div class="line"></div>
                 </div>
                 <ul class="header__nav-list" id="nav-links">
-                    <li class="header__nav-item"><a class="header__nav-link" href="home.html">Home</a></li>
-                    <li class="header__nav-item"><a class="header__nav-link" href="catalog.html">Catalog</a></li>
+                    <li class="header__nav-item"><a class="header__nav-link" href="{{ url_for('home') }}">Home</a></li>
+                    <li class="header__nav-item"><a class="header__nav-link" href="{{ url_for('homepages.catalog') }}">Catalog</a></li>
                 </ul>
-                <ul class="header__user-list">           
-                        <li class="header__user-item"><a class="header__user-link" href="logout.html">Logout</a></li>              
-                        <li class="header__user-item"><a class="header__user-link" href="login.html">Login</a></li>
-                        <li class="header__user-item"><a class="header__user-link" href="register.html">Sign Up</a></li>
-                    
+                <ul class="header__user-list">
+                    {% if 'user' in session %}
+                        {% if session['user']['role'] == 'admin' %}
+                            <li class="header__user-item"><a class="header__user-link" href="{{ url_for('homepages.admin_home') }}">{{ session['user']['username'] }}</a></li>
+                        {% else %}
+                            <li class="header__user-item"><a class="header__user-link" href="{{ url_for('homepages.user_home') }}">{{ session['user']['username'] }}</a></li>
+                        {% endif %}
+                        <li class="header__user-item"><a class="header__user-link" href="{{ url_for('auth.logout') }}">Logout</a></li>
+                    {% else %}
+                        <li class="header__user-item"><a class="header__user-link" href="{{ url_for('auth.login') }}">Login</a></li>
+                        <li class="header__user-item"><a class="header__user-link" href="{{ url_for('auth.register') }}">Sign Up</a></li>
+                    {% endif %}
                 </ul>
             </nav>
             <h1 class="header__title">Welcome to the Library Management System</h1>
             <div class="header_image">
-                <img src="static/images/main_image.jpg" alt="image">
+                <img src="{{ url_for('static', filename='images/main_image.jpg') }}" alt="image">
             </div>
             <p class="header__description">Streamlined management of books and scrolls for an efficient library experience.</p>
         </div>
@@ -54,7 +61,7 @@
         <p class="footer__contact">Contact us at: andrew.tinkaluk@chnu.edu.ua</p>
         <p class="footer__contact">Phone: +38 097 801 887</p>
     </footer>
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script>
 document.addEventListener("DOMContentLoaded", function() {
     const burgerMenu = document.getElementById("burger-menu");
@@ -63,7 +70,9 @@ document.addEventListener("DOMContentLoaded", function() {
     burgerMenu.addEventListener("click", function() {
         navLinks.classList.toggle("active");
     });
-    });
+});
+
+
     </script>
 </body>
 </html>
