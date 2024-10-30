@@ -1,0 +1,238 @@
+/* Загальні стилі */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: #0077cc;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Стилі для Header */
+.header {
+    background-color: transparent;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__container {
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Мутний білий фон */
+    border-radius: 15px; /* Закруглені краї */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header__nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.header__nav-list,
+.header__user-list {
+    display: flex;
+    gap: 20px;
+}
+
+.header__user-list {
+    margin-left: auto; /* Вирівнювання по правому краю */
+}
+
+.header_image img{ 
+max-height: 500px;
+}
+
+.header__nav-link,
+.header__user-link {
+    font-weight: bold;
+    padding: 5px 10px;
+    color: #0077cc;
+    transition: color 0.3s ease;
+}
+
+.header__nav-link:hover,
+.header__user-link:hover {
+    color: #0055a4;
+}
+
+.header__title {
+    font-size: 2rem;
+    margin: 10px 0;
+    color: #333;
+    text-align: center;
+}
+
+.header__description {
+    font-size: 1.1rem;
+    color: #666;
+    text-align: center;
+    margin: 5px 0;
+}
+
+/* Основні стилі */
+main {
+    flex: 1; /* Розтягує основний контент, щоб футер був внизу */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main__section {
+    margin: 20px 0;
+}
+
+.main__title {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.main__description {
+    font-size: 1rem;
+    color: #555;
+}
+
+.main__feature-list {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.main__feature-item {
+    margin: 5px 0;
+    color: #444;
+}
+
+/* Стилі для Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    margin-top: auto; /* Розташовує футер внизу */
+}
+
+.footer__contact {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* Адаптивні стилі */
+@media (max-width: 768px) {
+    .header__title {
+        font-size: 1.8rem;
+    }
+
+    .header__description {
+        font-size: 1rem;
+    }
+
+    .main__title {
+        font-size: 1.3rem;
+    }
+
+    .main__description {
+        font-size: 0.9rem;
+    }
+
+    .header__nav-list,
+    .header__user-list {
+        flex-direction: column; /* Вертикальне вирівнювання для маленьких екранів */
+        align-items: center;
+    }
+
+    .header__nav-list {
+        margin-bottom: 10px; /* Пробіл між меню */
+    }
+
+    .main__feature-list {
+        padding-left: 0; /* Видалення відступу */
+    }
+}
+
+@media (max-width: 480px) {
+    .header__title {
+        font-size: 1.5rem;
+    }
+
+    .header__description {
+        font-size: 0.9rem;
+    }
+
+    .main__title {
+        font-size: 1.2rem;
+    }
+
+    .main__description {
+        font-size: 0.8rem;
+    }
+
+    .footer__contact {
+        font-size: 0.8rem;
+    }
+}
+
+/* Стилі для бургер-меню */
+.burger-menu {
+    display: none; /* Сховати бургер-меню за замовчуванням */
+    flex-direction: column;
+    cursor: pointer;
+    margin-right: 20px; /* Відступ праворуч */
+}
+
+.line {
+    width: 25px;
+    height: 3px;
+    background-color: #0077cc;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+}
+
+/* Адаптивні стилі */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex; /* Показати бургер-меню на планшетах і мобільних телефонах */
+    }
+
+    .header__nav-list {
+        display: none; /* Сховати навігаційні посилання за замовчуванням */
+        flex-direction: column; /* Вертикальне вирівнювання */
+        position: absolute; /* Фіксоване позиціонування */
+        top: 60px; /* Відстань від верху */
+        left: 0;
+        background-color: rgba(255, 255, 255, 0.9);
+        width: 100%; /* Ширина на весь екран */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        z-index: 1000; /* Показати над іншими елементами */
+    }
+
+    .header__nav-list.active {
+        margin-top: 20px;
+        display: flex; /* Показати навігаційні посилання, коли бургер-меню активне */
+    }
+}
+

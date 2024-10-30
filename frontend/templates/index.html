@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Management System</title>
+</head>
+<body>
+    <header class="header">
+        <div class="header__container">
+            <nav class="header__nav">
+                <div class="burger-menu" id="burger-menu">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <ul class="header__nav-list" id="nav-links">
+                    <li class="header__nav-item"><a class="header__nav-link" href="home.html">Home</a></li>
+                    <li class="header__nav-item"><a class="header__nav-link" href="catalog.html">Catalog</a></li>
+                </ul>
+                <ul class="header__user-list">           
+                        <li class="header__user-item"><a class="header__user-link" href="logout.html">Logout</a></li>              
+                        <li class="header__user-item"><a class="header__user-link" href="login.html">Login</a></li>
+                        <li class="header__user-item"><a class="header__user-link" href="register.html">Sign Up</a></li>
+                    
+                </ul>
+            </nav>
+            <h1 class="header__title">Welcome to the Library Management System</h1>
+            <div class="header_image">
+                <img src="static/images/main_image.jpg" alt="image">
+            </div>
+            <p class="header__description">Streamlined management of books and scrolls for an efficient library experience.</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="main__section main__section--about">
+            <h2 class="main__title">About the System</h2>
+            <p class="main__description">The Library Management System simplifies the organization and tracking of books and scrolls, making library management effortless.</p>
+        </section>
+
+        <section class="main__section main__section--features">
+            <h2 class="main__title">Key Features</h2>
+            <ul class="main__feature-list">
+                <li class="main__feature-item">Comprehensive cataloging of books and scrolls for easy access.</li>
+                <li class="main__feature-item">Real-time tracking of inventory and borrowing history.</li>
+                <li class="main__feature-item">Automated notifications for upcoming returns and overdue reminders.</li>
+                <li class="main__feature-item">Advanced search and filtering options for efficient data retrieval.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__contact">Contact us at: andrew.tinkaluk@chnu.edu.ua</p>
+        <p class="footer__contact">Phone: +38 097 801 887</p>
+    </footer>
+    <link rel="stylesheet" href="static/style.css">
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const burgerMenu = document.getElementById("burger-menu");
+    const navLinks = document.getElementById("nav-links");
+
+    burgerMenu.addEventListener("click", function() {
+        navLinks.classList.toggle("active");
+    });
+    });
+    </script>
+</body>
+</html>
